@@ -3,8 +3,15 @@
 
 #include <Arduino.h>
 
-#include <ArxSmartPtr.h>
-#include <DHT11.h>
+// #include <ArxSmartPtr.h>
+// #include <DHT11.h>
+#include "DHT.h"
+
+#define DHTPIN 2
+#define DHTTYPE DHT11
+
+
+extern DHT dht;  
 
 class Sensor {
 public:
@@ -14,6 +21,6 @@ public:
   void setup();
   void loop();
 
-private:
-  std::shared_ptr<DHT11> _dht11;
+// private:
+//   std::shared_ptr<DHT11> _dht11;
 };
