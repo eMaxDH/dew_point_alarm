@@ -1,4 +1,5 @@
 #pragma once
+#include "HardwareSerial.h"
 #include <Arduino.h>
 
 // float get_dew_point_P_sm(float temperature, float a, float b, float c, float d);
@@ -21,7 +22,21 @@ float get_dew_point_gamma_m(float temperature, float rel_humidity, float b, floa
 {
   float rv = 0;
 
-  rv = log(rel_humidity * exp((b - temperature/d)* (temperature / (c + temperature))));
+  float buffer_1 = b - temperature/d;
+  float buffer_2 = temperature / (c + temperature);
+  float buffer_3 = buffer_1 * buffer_2;
+  float buffer_4 = exp(buffer_3);
+
+  // Serial.print("buffer_1: ");
+  // Serial.println(buffer_1);
+  // Serial.print("buffer_2: ");
+  // Serial.println(buffer_2);
+  // Serial.print("buffer_3: ");
+  // Serial.println(buffer_3);
+  // Serial.print("buffer_4: ");
+  // Serial.println(buffer_4);
+
+  rv = log(rel_humidity * buffer_4 );
 
   return rv;
 }
@@ -43,6 +58,10 @@ float get_dew_point(float temperature, float rel_humidity)
     a = 6.1121; // [mbar]
     b = 17.966; // [1]
     c = 247.15; // [°C]
+  }
+  else
+  {
+    return -1;
   }
 
   float gamma_m = get_dew_point_gamma_m(temperature, rel_humidity, b, c, d);
