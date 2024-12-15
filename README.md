@@ -4,7 +4,7 @@ This project simulates an Arduino Nano that measures and displays the dew point,
 
 ## Requirements
 
-- **picSimLab**  
+- **PICSimLab**  
   - Use the configuration file: `dew_point_alarm.pzw`  
   - This configuration simulates an Arduino Nano environment within picSimLab.
   - Setup
