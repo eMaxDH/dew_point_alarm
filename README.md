@@ -22,8 +22,6 @@ This project simulates an Arduino Nano that measures and displays the dew point,
   - Set the baud rate to **9600**.
   - `apt install putty`
 
-![Screenshot PICSimLab](doc/image/Screenshot_PICSimLab.png)
-
 ## Usage
 
 1. **Load the Simulation**  
@@ -44,5 +42,8 @@ This project simulates an Arduino Nano that measures and displays the dew point,
 4. **Adjusting Thresholds**  
    - Update any threshold or calibration values in the `.ino` file as needed.  
    - Re-upload the sketch to apply changes.
+
+After loading the PICSimLab configuration, loading the hex file and connecting to the serial port with Putty, the GUI should look like this:
+![Screenshot PICSimLab](doc/image/Screenshot_PICSimLab.png)
 
 Feel free to customize the code or wiring based on your specific sensor setup and requirements.  
