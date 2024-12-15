@@ -7,14 +7,20 @@ This project simulates an Arduino Nano that measures and displays the dew point,
 - **picSimLab**  
   - Use the configuration file: `dew_point_alarm.pzw`  
   - This configuration simulates an Arduino Nano environment within picSimLab.
+  - Setup
+    - Build from source [GitHub: PICSimLab](https://github.com/lcgamboa/picsimlab)
+    - `./bscripts/build_all_and_install.sh`
+    - Add your account to the `dialout` group: `sudo usermod -aG dialout $USER`
 
 - **Arduino IDE**  
   - Open the sketch located in `dew_point_alarm/dew_point_alarm.ino`.  
   - Compile and upload it (in the simulation environment or to a real Arduino Nano if desired).
+  - [Arduino IDE](https://www.arduino.cc/en/software)
 
 - **PuTTY** (or any serial terminal)  
   - Connect to `/dev/tnt3` (or the correct COM port equivalent on Windows).  
   - Set the baud rate to **9600**.
+  - `apt install putty`
 
 ![Screenshot PICSimLab](doc/image/Screenshot_PICSimLab.png)
 
