@@ -16,6 +16,8 @@ This project simulates an Arduino Nano that measures and displays the dew point,
   - Connect to `/dev/tnt3` (or the correct COM port equivalent on Windows).  
   - Set the baud rate to **9600**.
 
+![Screenshot PICSimLab](doc/image/Screenshot_PICSimLab.png)
+
 ## Usage
 
 1. **Load the Simulation**  
