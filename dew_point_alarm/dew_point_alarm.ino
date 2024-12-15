@@ -1,5 +1,5 @@
 #include "sensor.hpp"
-#include "physic/dew_point_calc.hpp"
+#include "dew_point_calc.hpp"
 
 int potpin = A0;  // analog pin used to connect the potentiometer
 int val;    // variable to read the value from the analog pin
