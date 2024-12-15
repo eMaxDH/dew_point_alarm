@@ -21,14 +21,14 @@ void Sensor::setup()
   // _dht11->setDelay(2500); // Set this to the desired delay. Default is 500ms.
 }
 
-void Sensor::loop()
+void Sensor::loop(float &humi, float &tempC)
 {
   Serial.println("=== Sensor Loop ===");
 
-  int temperature = 0;
-  int humidity = 0;
-  float humi = dht.readHumidity();
-  float tempC = dht.readTemperature();
+  // int temperature = 0;
+  // int humidity = 0;
+  humi = dht.readHumidity();
+  tempC = dht.readTemperature();
 
   delay(2000);
   // Attempt to read the temperature and humidity values from the DHT11 sensor.
@@ -63,6 +63,7 @@ void Sensor::loop()
     Serial.print(tempC);
     Serial.println("°C ~ "); 
   }
+
 
   // humidity = dht11.readHumidity();
 

@@ -19,7 +19,7 @@ public:
   ~Sensor();
 
   void setup();
-  void loop();
+  void loop(float &humi, float &tempC);
 
 // private:
 //   std::shared_ptr<DHT11> _dht11;

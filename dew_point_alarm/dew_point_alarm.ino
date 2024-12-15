@@ -33,14 +33,8 @@ void setup() {
 void loop() {
 
   float dew_point = 0;
-  float temp = 10.0;
-  float rh = 0.6;
-
-  dew_point = get_dew_point(temp, rh);
-
-  Serial.print("dew point: ");
-  Serial.println(dew_point);
-
+  float tempC = 10.0;
+  float humi = 0.6;
 
   val = analogRead(potpin);            // reads the value of the potentiometer (value between 0 and 1023)
   val = map(val, 0, 1023, 0, 180);     // scale it for use with the servo (value between 0 and 180)
@@ -54,5 +48,18 @@ void loop() {
   }
   delay(500);
 
-  s.loop();
+  s.loop(humi, tempC);
+  
+    Serial.print("Humidity: ");
+    Serial.print(humi);
+    Serial.print("%");
+
+    Serial.print("  |  "); 
+
+    Serial.print("Temperature: ");
+    Serial.print(tempC);
+    Serial.println("°C ~ "); 
+  dew_point = get_dew_point(tempC, humi/100.0);
+  Serial.print("dew point: ");
+  Serial.println(dew_point);
 }
