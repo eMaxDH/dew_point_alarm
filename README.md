@@ -26,7 +26,9 @@ This project simulates an Arduino Nano that measures and displays the dew point,
 
 2. **Load the Arduino Sketch**  
    - In the Arduino IDE, open `dew_point_alarm.ino`.  
-   - Verify the sketch and upload to the simulated board (or a real Arduino Nano).  
+   - Verify and compile the sketch [ctrl + r]
+   - Export the compiled binary [ctrl + alt + s]
+   - Upload the `.hex` file to the simulated board (or a real Arduino Nano).  
 
 3. **Serial Monitoring**  
    - In PuTTY, connect to `/dev/tnt3`.  
